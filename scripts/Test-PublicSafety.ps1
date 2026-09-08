@@ -23,7 +23,7 @@ if ($LASTEXITCODE -ne 0 -or $tracked.Count -eq 0) {
     )
 }
 
-$configuredEmail = (& git -C $rootPath config user.email 2>$null).Trim()
+$configuredEmail = (@(& git -C $rootPath config user.email 2>$null) -join '').Trim()
 if ($configuredEmail -match '(?i)@microsoft\.com$') {
     $failures.Add('Git author email uses a work address. Configure a public noreply address locally.')
 }
