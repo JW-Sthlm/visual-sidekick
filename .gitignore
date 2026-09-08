@@ -1,0 +1,10 @@
+.local/
+.test-output/
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,35 @@
+name: Windows CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-scan:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Public safety scan
+        shell: pwsh
+        run: ./scripts/Test-PublicSafety.ps1
+
+      - name: Restore
+        run: dotnet restore VisualSidekick.sln
+
+      - name: Build
+        run: dotnet build VisualSidekick.sln --configuration Release --no-restore
+
+      - name: Unit and smoke tests
+        shell: pwsh
+        run: ./test.ps1

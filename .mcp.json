@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "visual-sidekick": {
+      "type": "stdio",
+      "command": ".local\\dist\\visual-sidekick-server.exe",
+      "args": [],
+      "tools": [
+        "*"
+      ],
+      "timeout": 300000
+    }
+  }
+}

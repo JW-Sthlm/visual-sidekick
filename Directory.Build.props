@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <CopilotCliBinaryPath
+      Condition="'$(CopilotCliBinaryPath)' == '' And '$(COPILOT_CLI_BINARY_PATH)' != ''">$(COPILOT_CLI_BINARY_PATH)</CopilotCliBinaryPath>
+  </PropertyGroup>
+</Project>

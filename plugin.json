@@ -1,0 +1,19 @@
+{
+  "name": "visual-sidekick",
+  "description": "A visible, user-selected-window companion for presentations, design reviews, workflows, and visible errors.",
+  "version": "1.0.0",
+  "author": {
+    "name": "JW-Sthlm"
+  },
+  "keywords": [
+    "vision",
+    "windows",
+    "presentations",
+    "design-review",
+    "mcp"
+  ],
+  "agents": "agents/",
+  "skills": "skills/",
+  "commands": "commands/",
+  "mcpServers": ".mcp.json"
+}
